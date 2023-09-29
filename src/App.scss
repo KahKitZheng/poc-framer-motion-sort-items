@@ -1,0 +1,39 @@
+.list {
+  display: grid;
+  list-style: none;
+  gap: 0.5rem;
+
+  .list-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 9fr 1fr;
+    width: 800px;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .label {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .type {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+
+      &.correct {
+        background-color: hsl(150, 50%, 80%);
+        color: hsl(150, 50%, 20%);
+      }
+
+      &.incorrect {
+        background-color: hsl(0, 50%, 80%);
+        color: hsl(0, 80%, 30%);
+      }
+    }
+  }
+}
