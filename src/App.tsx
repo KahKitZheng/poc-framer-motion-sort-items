@@ -16,12 +16,12 @@ const defaultAnswers = [
 ];
 
 function App() {
-  const [answers, setAnswers] = useState(defaultAnswers);
+  const [answers, setAnswers] = useState([...defaultAnswers]);
 
   // Make sure to return a new array and not just sort them, otherwise React won't re-render
   function sortAnswers() {
     // sort by correctness and then by label
-    setAnswers([
+    return setAnswers([
       ...answers.sort((a, b) =>
         a.correct === b.correct ? 0 : a.correct ? 1 : -1
       ),
@@ -29,7 +29,7 @@ function App() {
   }
 
   function resetAnswers() {
-    setAnswers([...defaultAnswers]);
+    return setAnswers([...defaultAnswers]);
   }
 
   return (
@@ -52,8 +52,8 @@ function App() {
         ))}
       </ul>
 
-      <button onClick={() => sortAnswers()}>sort</button>
-      <button onClick={() => resetAnswers()}>rest</button>
+      <button onClick={sortAnswers}>sort</button>
+      <button onClick={resetAnswers}>reset</button>
     </div>
   );
 }
