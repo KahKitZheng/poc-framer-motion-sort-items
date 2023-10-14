@@ -34,14 +34,14 @@ function App() {
 
   return (
     <div>
-      <h1>Sort answers onSubmit</h1>
+      <h1>Sort items by correctness</h1>
 
       <ul className="list">
         {answers.map((answer) => (
           <motion.li
             key={answer.label} // Key has to be unique value and should not change on re-render (so definitely not index)
             className="list-item"
-            layout // Animate the new position of the item
+            layout="position" // Animate the new position of the item
             transition={{ type: "spring", damping: 25, stiffness: 120 }}
           >
             <p className="label">{answer.label}</p>
@@ -52,8 +52,10 @@ function App() {
         ))}
       </ul>
 
-      <button onClick={sortAnswers}>sort</button>
-      <button onClick={resetAnswers}>reset</button>
+      <div className="buttons">
+        <button onClick={sortAnswers}>sort</button>
+        <button onClick={resetAnswers}>reset</button>
+      </div>
     </div>
   );
 }
