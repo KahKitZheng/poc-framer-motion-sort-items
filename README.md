@@ -1,1 +1,1 @@
-# PoC - Auto sort animation with Framer Motion
+# Reorder animation with Framer Motion
